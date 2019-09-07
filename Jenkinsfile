@@ -6,8 +6,8 @@ pipeline {
             steps {
                sh """
                 cd $WORKSPACE 
-                mkdir dev
-                mkdir test
+                mkdir -p dev
+                mkdir -p test
                 """
             }
         }
