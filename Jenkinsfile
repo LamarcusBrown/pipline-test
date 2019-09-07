@@ -25,7 +25,7 @@ pipeline {
             steps {
                 sh """
                 ls -al $WORKSPACE/dev
-                cat cd $WORKSPACE/dev script.sh
+                cat $WORKSPACE/dev/script.sh
                 """
             }
         }
