@@ -17,7 +17,7 @@ pipeline {
                 cd $WORKSPACE/dev
                 echo "#!/bin/bash" > script.sh
                 echo "#piplen script" >> script.sh
-                echo "hostname" >> script.sh
+                echo hostname >> script.sh
                 """
             }
         }
