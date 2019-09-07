@@ -10,7 +10,10 @@ pipeline {
         stage('stage2') {
             steps {
                 echo '... and now stage 2'
-                sh 'pwd'
+                sh """
+                pwd
+                echo $WORKSPACE
+                """
             }
         }
         stage('stage3') {
