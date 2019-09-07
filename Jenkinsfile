@@ -2,28 +2,31 @@ pipeline {
     agent any
 
     stages {
-        stage('stage1') {
+        stage('Environment Prep') {
             steps {
-                echo 'Iwelcome to stage 1'
-            }
-        }
-        stage('stage2') {
-            steps {
-                echo '... and now stage 2'
-                sh """
-                pwd
-                echo $WORKSPACE
+               sh """
+                cd $WORKSPACE 
+                mkdir dev
+                mkdir test
                 """
             }
         }
-        stage('stage3') {
+        stage('Provisioning Infrastructure') {
             steps {
-                echo 'we are in stage 3 now'
+                sh """
+                cd $WORKSPACE/dev
+                echo "#!/bin/bash" > script.sh
+                echo "#piplen script" >> script.sh
+                echo "hostname" >> script.sh
+                """
             }
         }
-        stage('stage4') {
+        stage('Validating Infrastructure') {
             steps {
-                echo 'last stage - stage 4'
+                sh """
+                ls -al 
+                cat script.sh
+                """
             }
         }
     }
