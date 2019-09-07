@@ -24,8 +24,8 @@ pipeline {
         stage('Validating Infrastructure') {
             steps {
                 sh """
-                ls -al 
-                cat script.sh
+                ls -al $WORKSPACE/dev
+                cat cd $WORKSPACE/dev script.sh
                 """
             }
         }
