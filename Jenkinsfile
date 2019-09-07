@@ -18,6 +18,7 @@ pipeline {
                 echo "#!/bin/bash" > script.sh
                 echo "#piplen script" >> script.sh
                 echo hostname >> script.sh
+                cat script.sh
                 """
             }
         }
