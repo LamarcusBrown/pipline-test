@@ -25,6 +25,7 @@ pipeline {
         stage('Validating Infrastructure') {
             steps {
                 sh """
+                chmod +x $WORKSPACE/dev/script.sh
                 ./$WORKSPACE/dev/script.sh
                 """
             }
