@@ -13,7 +13,7 @@ pipeline {
                 mkdir -p dev
                 mkdir -p test
                 echo $MY_NAME
-                echo $WORKSPACE
+                chmod +x $WORKSPACE/hostname.sh
                 /$WORKSPACE/hostname.sh
                 """
             }
