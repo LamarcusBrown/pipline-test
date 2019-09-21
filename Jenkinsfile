@@ -8,12 +8,14 @@ pipeline {
                 cd $WORKSPACE 
                 mkdir -p dev
                 mkdir -p test
+                hostnamectl
                 """
             }
         }
         stage('Provisioning Infrastructure') {
             steps {
                 sh """
+                echo "building initial script"
                 cd $WORKSPACE/dev
                 echo "#!/bin/bash" > script.sh
                 echo "#piplen script" >> script.sh
