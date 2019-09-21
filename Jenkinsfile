@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        HOST_NAME='Jenkins-centOS'
+        MY_NAME='Marc'
+    }
     stages {
         stage('Environment Prep') {
             steps {
@@ -8,7 +12,9 @@ pipeline {
                 cd $WORKSPACE 
                 mkdir -p dev
                 mkdir -p test
-                hostnamectl
+                echo $MY_NAME
+                echo $WORKSPACE
+                /$WORKSPACE/hostname.sh
                 """
             }
         }
