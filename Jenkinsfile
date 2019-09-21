@@ -15,6 +15,7 @@ pipeline {
                 echo $MY_NAME
                 chmod +x $WORKSPACE/hostname.sh
                 /$WORKSPACE/hostname.sh
+                cat $HOST_NAME.txt
                 """
             }
         }

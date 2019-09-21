@@ -1,3 +1,4 @@
 #!/bin/bash
 
-su - centos | hostnamectl
+echo hostname
+touch $HOST_NAME.txt
