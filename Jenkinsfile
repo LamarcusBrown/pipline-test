@@ -27,6 +27,7 @@ pipeline {
                 sh """
                 chmod +x $WORKSPACE/dev/script.sh
                 /$WORKSPACE/dev/script.sh
+                date
                 """
             }
         }
